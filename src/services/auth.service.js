@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "https://assignmentnodejsapi.herokuapp.com/api/auth/";
 
 class AuthService {
   login(username, password) {
@@ -28,7 +28,7 @@ class AuthService {
   }
 
   autoComplete(username) {
-    return axios.get("http://localhost:8080/api/test/all", {
+    return axios.get("https://assignmentnodejsapi.herokuapp.com/api/test/all", {
       username
     });
   }

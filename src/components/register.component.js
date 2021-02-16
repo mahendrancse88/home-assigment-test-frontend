@@ -73,7 +73,7 @@ class Register extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
-      username: "",
+      name: "",
       email: "",
       password: "",
       successful: false,
@@ -82,7 +82,7 @@ class Register extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value,
+      name: e.target.value,
     });
   }
 
@@ -110,7 +110,7 @@ class Register extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       this.props
         .dispatch(
-          register(this.state.username, this.state.email, this.state.password)
+          register(this.state.name, this.state.email, this.state.password)
         )
         .then(() => {
           this.setState({
@@ -151,7 +151,7 @@ class Register extends Component {
                     type="text"
                     className="form-control"
                     name="username"
-                    value={this.state.username}
+                    value={this.state.name}
                     autoComplete="off"
                    
                     onChange={this.onChangeUsername}

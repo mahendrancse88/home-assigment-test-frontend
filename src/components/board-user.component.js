@@ -54,7 +54,7 @@ class BoardUser extends Component {
               {this.state.content.map((person, index) => (
               <tr key={index}>
                 <td>{person.id}</td>
-                <td>{person.username}</td>
+                <td>{person.name}</td>
                 <td>{person.email}</td>
                 <td>{person.password.substring(0, 40)} ...{" "}</td>
                 <td>{person.createdAt}</td>

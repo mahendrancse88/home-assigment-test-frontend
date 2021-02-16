@@ -3,9 +3,9 @@ import axios from "axios";
 const API_URL = "https://assignmentnodejsapi.herokuapp.com/api/auth/";
 
 class AuthService {
-  login(username, password) {
+  login(email, password) {
     return axios
-      .post(API_URL + "signin", { username, password })
+      .post(API_URL + "signin", { email, password })
       .then((response) => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
@@ -19,9 +19,9 @@ class AuthService {
     localStorage.removeItem("user");
   }
 
-  register(username, email, password) {
+  register(name, email, password) {
     return axios.post(API_URL + "signup", {
-      username,
+      name,
       email,
       password,
     });

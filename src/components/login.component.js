@@ -62,7 +62,7 @@ class Login extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
-      username: "",
+      email: "",
       password: "",
       loading: false,
     };
@@ -70,7 +70,7 @@ class Login extends Component {
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value,
+      email: e.target.value,
     });
   }
 
@@ -92,7 +92,7 @@ class Login extends Component {
     const { dispatch, history } = this.props;
 
     if (this.checkBtn.context._errors.length === 0) {
-      dispatch(login(this.state.username, this.state.password))
+      dispatch(login(this.state.email, this.state.password))
         .then(() => {
           history.push("/profile");
           window.location.reload();
@@ -137,7 +137,7 @@ class Login extends Component {
                 type="text"
                 className="form-control"
                 name="username"
-                value={this.state.username}
+                value={this.state.email}
                 onChange={this.onChangeUsername}
                 validations={[required, email]}
               />
